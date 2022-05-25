@@ -16,6 +16,7 @@ const Class = enum {
 };
 
 const Character = struct {
+    name: []const u8,
     class: Class,
     gold: u32,
     health: u8,
@@ -27,6 +28,7 @@ pub fn main() void {
 
     // Glorp the Wise
     chars[0] = Character{
+        .name = "Glorp the Wise",
         .class = Class.wizard,
         .gold = 20,
         .health = 100,
@@ -42,6 +44,26 @@ pub fn main() void {
     //
     // Feel free to run this program without adding Zump. What does
     // it do and why?
+    chars[1] = Character{
+        .name = "Zump the Loud",
+        .class = Class.bard,
+        .gold = 10,
+        .health = 100,
+        .experience = 20,
+    };
+
+    // var longestName: usize = 0;
+    // for (chars) |c| {
+    //     if (c.name.len > longestName) {
+    //         longestName = c.name.len;
+    //     }
+    // }
+    // for (chars) |c, num| {
+    //     // This errors - is there a way to do this?
+    //     std.debug.print("{} {s:>longestName} - G:{} H:{} XP:{}\n", .{
+    //         num + 1, c.name, c.gold, c.health, c.experience,
+    //     });
+    // }
 
     // Printing all RPG characters in a loop:
     for (chars) |c, num| {
