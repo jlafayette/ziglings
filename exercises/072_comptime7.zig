@@ -35,10 +35,14 @@ pub fn main() void {
     // at compile time.
     //
     // Please fix this to loop once per "instruction":
-    ??? (i < instructions.len) : (???) {
+    // @compileLog("'0': ", '0');
+    inline while (i < instructions.len) : (i += 3) {
 
         // This gets the digit from the "instruction". Can you
         // figure out why we subtract '0' from it?
+        // @compileLog("i: ", i);
+        // @compileLog("instuctions[i+1]: ", instructions[i + 1]);
+        // @compileLog("instuctions[i+1] - '0': ", instructions[i + 1] - '0');
         comptime var digit = instructions[i + 1] - '0';
 
         // This 'switch' statement contains the actual work done
